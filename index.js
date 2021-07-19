@@ -1,6 +1,4 @@
 let taskArr = [];
-let start = 0;
-let current = 0;
 
 
 if (localStorage.getItem('localObject') !== null) {
@@ -10,8 +8,8 @@ if (localStorage.getItem('localObject') !== null) {
 }
 
 function editListen() {
-const getEdit = document.querySelectorAll('p');
-getEdit.forEach((e, i) => {
+    const getEdit = document.querySelectorAll('p');
+    getEdit.forEach((e, i) => {
     e.addEventListener('keypress', (j) => {
     if (j.key === 'Enter') {
         const x = e.innerText;
@@ -21,13 +19,15 @@ getEdit.forEach((e, i) => {
         editListen();
         delOne();
     }
-    });
+});
 });
 }
 
 function drag() {
-const getlistid = document.querySelectorAll('li');
-getlistid.forEach((e, i) => {
+    let start = 0;
+    let current = 0;
+    const getlistid = document.querySelectorAll('li');
+    getlistid.forEach((e, i) => {
     e.addEventListener('dragstart', () => {
     start = i;
     });
